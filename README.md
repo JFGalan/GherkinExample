@@ -1,4 +1,4 @@
-# Project: BDD Gherkin Examples 🐕
+# Project: BDD Gherkin Examples 🌐
 
 #### This project was made through Gherkin.
 
@@ -14,4 +14,4 @@
 ## Description 📘
 
 #### Application created to:
-#### We have created with the gherkin language different scenarios that encompass the specifications of exercise 1.
+#### We have created with the gherkin language different scenarios that encompass the specifications of exercise 1.1.

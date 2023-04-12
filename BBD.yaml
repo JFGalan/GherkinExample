@@ -1,0 +1,57 @@
+Feature: Login process with privacy policy
+
+  Scenario: Login page should display email and password fields and privacy policy checkbox
+
+    Given the user is on the login page
+
+    When the user does not check the privacy policy checkbox
+
+    Then the user should see an email field, a password field, and a privacy policy checkbox
+
+
+
+  Scenario: User cannot login without accepting privacy policy
+    Given the user is on the login page
+    When the user does not check the privacy policy checkbox
+    And the user clicks on the "Login" button
+    Then the user should see an error message that they must accept the privacy policy
+
+
+
+  Scenario: User can login with correct credentials and accepted privacy policy
+    Given the user is on the login page
+    And the user checks the privacy policy checkbox
+    When the user enters their correct email and password
+    And the user clicks on the "Login" button
+    Then the user should be directed to their account
+
+
+
+  Scenario: User cannot login without providing both email and password
+    Given the user is on the login page
+    When the user leaves either email or password field blank
+    And the user clicks on the "Login" button
+    Then the user should see an error message that both fields are required
+
+
+
+  Scenario: User cannot login with incorrect credentials but accepted privacy policy
+    Given the user is on the login page
+    And the user checks the privacy policy checkbox
+    When the user enters incorrect email and/or password
+    And the user clicks on the "Login" button
+    Then the user should see an error message that their login credentials are invalid
+
+
+
+  Scenario: User can close login screen without accepting privacy policy
+    Given the user is on the login page
+    When the user chooses to close the login screen without accepting the privacy policy
+    Then the user should be directed away from the login page
+
+
+
+  Scenario: User who has already logged in does not need to accept privacy policy again
+    Given the user has already logged in
+    When the user accesses the login page
+    Then the user should not be required to accept the privacy policy again
